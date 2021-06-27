@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <title>6IX9INE | Концерты</title>
+    </head>
+    <body>
+        <header>
+            <div class="qmenu">
+                <a href="../index.html" class="qtextlogo">6IX9INE</a>
+                <ul id="ul">
+                    <li><a href="index.html">Информация</a></li>
+                    <li><a href="music.html">Музыка</a></li>
+                    <li><a href="photos.html">Фото</a></li>
+                    <li><a href="concerts.html">Концерты</a></li>
+                </ul>
+                <input type="button" class="qmenubutton">
+            </div>
+        </header>
+        <main>
+            <div class="qcontent">
+                <h1 class="qheader" style="text-align:center">Концерты</h1>
+                <div class="concerts-holder">
+                </div>
+            </div>
+        </main>
+
+
+        <footer style="visibility: hidden;">
+            <img src="logo.png" width="130" height="130">
+        </footer>
+
+        <script>
+            let concerts = [
+                {"name":"Франция","path":"concerts/france.png","link":"https://www.youtube.com/watch?v=VBZ9pBi5AZc"},
+                {"name":"Маями","path":"concerts/miami.png","link":"https://www.youtube.com/watch?v=NYo2RHofhGc"},
+                {"name":"Москва","path":"concerts/moscow.png","link":"https://www.youtube.com/watch?v=NH9FRL7XTK8"},
+                {"name":"Массачусетс","path":"concerts/MA.png","link":"https://www.youtube.com/watch?v=tZPzdosMcNk"},
+                {"name":"Лос-Анжелес","path":"concerts/LA.png","link":"https://www.youtube.com/watch?v=boysJeKQ_Lk"},
+                {"name":"Нидерланды","path":"concerts/niderlands.png","link":"https://www.youtube.com/watch?v=hKqiLuGfZjc"},
+                {"name":"Италия","path":"concerts/italy.png","link":"https://www.youtube.com/watch?v=9yu20xVexTg"},
+                {"name":"Stoopid","path":"concerts/stoopid.png","link":"https://www.youtube.com/watch?v=34N8TwnwaN0"},
+                {"name":"Tati","path":"concerts/westcoast.png","link":"https://www.youtube.com/watch?v=8Z7ePk0ZAsQ"}
+            ];
+        </script>
+        <script src="../js/concerts.js"></script>
+        <script src="../js/qscript.js"></script>
+    </body>
+</html>
