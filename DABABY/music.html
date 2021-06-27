@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <title>DABABY | Музыка</title>
+    </head>
+    <body>
+        <header>
+            <div class="qmenu">
+                <a href="../index.html" class="qtextlogo">DABABY</a>
+                <ul id="ul">
+                    <li><a href="index.html">Информация</a></li>
+                    <li><a href="music.html">Музыка</a></li>
+                    <li><a href="photos.html">Фото</a></li>
+                    <li><a href="concerts.html">Концерты</a></li>
+                </ul>
+                <input type="button" class="qmenubutton">
+            </div>
+        </header>
+        <main>
+            <div class="qcontent">
+                <h1 class="qheader">Музыка</h1>
+                <p class="qtext paragraph">Все треки Dababy объеденены единым стилем. Они довольно энергичные и весёлые, а также сопровождаются хайповыми фразочками рэпера. Ниже вы можете послушать и скачать треки как самого Dababy, так и треки, записанные с его участием.</p>
+
+
+                <h1 class="qheader">Треки</h1>
+                <div class="tracks"></div>
+
+            </div>
+        </main>
+
+        <footer style="visibility: hidden;">
+            <img src="logo.png" width="130" height="130">
+        </footer>
+
+        <script>
+            let music = [
+                {"name":"Vibez","path":"music/Vibez.mp3","video":"https://www.youtube.com/watch?v=U2JyeciEwSI"},
+                {"name":"Suge","path":"music/Suge.mp3","video":"https://www.youtube.com/watch?v=KvuQNNVrbtM"},
+                {"name":"Rockstar","path":"music/Rockstar.mp3","video":"https://www.youtube.com/watch?v=4PDpVNKZgKg"},
+                {"name":"Find My Way","path":"music/Find My Way.mp3","video":"https://www.youtube.com/watch?v=gmK_gaE5v9A"},
+                {"name":"BOP","path":"music/BOP.mp3","video":"https://www.youtube.com/watch?v=28hYUZMufDg"},
+                {"name":"Intro","path":"music/Intro.mp3","video":"https://www.youtube.com/watch?v=ce1lTmRtIkM"},
+                {"name":"Masterpiece","path":"music/Masterpiece.mp3","video":"https://www.youtube.com/watch?v=pnMtmFzMLP4"},
+                {"name":"What's Poppin","path":"music/What's Poppin.mp3","video":"https://www.youtube.com/watch?v=HIwAI05Y1fU"}
+            ];
+        </script>
+        <script src="../js/music.js"></script>
+        <script src="../js/qscript.js"></script>
+    </body>
+</html>

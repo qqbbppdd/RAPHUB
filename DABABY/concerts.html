@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <title>DABABY | Концерты</title>
+    </head>
+    <body>
+        <header>
+            <div class="qmenu">
+                <a href="../index.html" class="qtextlogo">DABABY</a>
+                <ul id="ul">
+                    <li><a href="index.html">Информация</a></li>
+                    <li><a href="music.html">Музыка</a></li>
+                    <li><a href="photos.html">Фото</a></li>
+                    <li><a href="concerts.html">Концерты</a></li>
+                </ul>
+                <input type="button" class="qmenubutton">
+            </div>
+        </header>
+        <main>
+            <div class="qcontent">
+                <h1 class="qheader" style="text-align:center">Концерты</h1>
+                <div class="concerts-holder">
+                </div>
+            </div>
+        </main>
+
+
+        <footer style="visibility: hidden;">
+            <img src="logo.png" width="130" height="130">
+        </footer>
+
+        <script>
+            let concerts = [
+                {"name":"Маями","path":"concerts/miami.jpg","link":"https://www.youtube.com/watch?v=w_Ispkrk2b8"},
+                {"name":"Флорида","path":"concerts/florida.jpg","link":"https://www.youtube.com/watch?v=vm9QhzI6t_g"},
+                {"name":"Лас-Вегас","path":"concerts/vegas.jpg","link":"https://www.youtube.com/watch?v=XQfRit22rRI"},
+                {"name":"Техас","path":"concerts/texas.jpg","link":"https://www.youtube.com/watch?v=WBF9tlOeJPc"},
+                {"name":"Невада","path":"concerts/nevada.jpg","link":"https://www.youtube.com/watch?v=uf2-sRNVEPs"},
+                {"name":"Лос-Анжелес","path":"concerts/LA.jpg","link":"https://www.youtube.com/watch?v=YWctsLJOxHg"},
+                {"name":"Hip-Hop Awards","path":"concerts/hiphopawards.jpg","link":"https://www.youtube.com/watch?v=8u8Zj0ThNrE"},
+                {"name":"BET Awards","path":"concerts/betawards.jpg","link":"https://www.youtube.com/watch?v=qhHm8Bhs7mM"}
+            ];
+        </script>
+        <script src="../js/concerts.js"></script>
+        <script src="../js/qscript.js"></script>
+    </body>
+</html>

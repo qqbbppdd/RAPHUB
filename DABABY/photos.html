@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/popup.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <title>DABABY | Фото</title>
+    </head>
+    <body>
+        <header>
+            <div class="qmenu">
+                <a href="../index.html" class="qtextlogo">DABABY</a>
+                <ul id="ul">
+                    <li><a href="index.html">Информация</a></li>
+                    <li><a href="music.html">Музыка</a></li>
+                    <li><a href="photos.html">Фото</a></li>
+                    <li><a href="concerts.html">Концерты</a></li>
+                </ul>
+                <input type="button" class="qmenubutton">
+            </div>
+        </header>
+        <main>
+            <div class="qcontent">
+                <h1 class="qheader">Фото</h1>
+                <div class="qimagecontainer"></div>
+            </div>
+        </main>
+        <footer style="visibility: hidden;">
+            <img src="logo.png" width="130" height="130">
+        </footer>
+
+        <div class="popup">
+            <div class="popup-window">
+                <img class="qimage" id="popup-img" alt="Фото Dababy">
+            </div>
+        </div>
+
+        <script>
+            let count = 17;
+            let root = "dababy";
+        </script>
+        <script src="../js/photos.js"></script>
+        <script src="../js/qscript.js"></script>
+    </body>
+</html>
