@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/popup.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+        <script src= "https://smtpjs.com/v3/smtp.js"></script>
+        <title>RAPHUB | Исполнители</title>
+    </head>
+    <body>
+        <header>
+            <div class="qmenu">
+                <h1 class="qtextlogo">RAPHUB</h1>
+                <ul id="ul">
+                    <li><a href="index.html">Исполнители</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+                <input type="button" class="qmenubutton">
+            </div>
+        </header>
+        <main>
+            <h1 class="qheader header">Исполнители</h1>
+            <div class="people">
+                <!--ARIANA GRANDE-->
+                <div class="person" onclick="OpenArticle(0,'ARIANA')">
+                    <div class="soft">
+                        <img src="img/arianagrande.webp">
+                    </div>
+                    <h1>Ariana Grande</h1>
+                    <p>Королева Поп-Музыки</p>
+                </div>
+                <!--6IX9INE-->
+                <div class="person with-crown" onclick="OpenArticle(1,'6IX9INE')">
+                    <div class="soft">
+                        <img src="img/6ix9ine.jpg">
+                    </div>
+                    <h1>6ix9ine</h1>
+                    <p>Король Рэпа</p>
+                </div>
+                <!--DABABY-->
+                <div class="person" onclick="OpenArticle(2,'DABABY')">
+                    <div class="soft">
+                        <img src="img/dababy.webp">
+                    </div>
+                    <h1>Dababy</h1>
+                    <p>"Less Gooo"</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="popup">
+            <div class="popup-window registration">
+                <h1 class="qheader">Обновления</h1>
+                <p class="qtext">Привет! Пожалуйста, подпишись на обновления! Мы будем присылать тебе на почту информацию о новых интересных сайтах. Если захочешь прекратить оповещения, просто ответь на эмайл и попроси об этом.</p>
+
+                <div class="form">
+                    <h3 class="qtext" style="margin-top:15px;">Имя</h3>
+                    <input type="text" id="NAME" class="qinputfield" placeholder="Илья">
+                    <h3 class="qtext" style="margin-top:10px;">Email</h3>
+                    <input type="text" id="EMAIL" class="qinputfield" placeholder="example@gmail.com">
+                </div>
+
+                <div class="buttonholder">
+                    <input type="button" class="qbutton" onclick="Cancel()" value="Отказаться">
+                    <input type="button" class="qbutton" onclick="Done()" value="Подписаться">
+                </div>
+            </div>
+
+            <div class="popup-window registration comfort-inputs">
+                <h1 class="qheader">Обновления</h1>
+
+                <h3 class="qtext" style="margin-top:15px;">Имя</h3>
+                <input type="text" id="NAME-comf" class="qinputfield" placeholder="Илья">
+                <h3 class="qtext" style="margin-top:10px;">Email</h3>
+                <input type="text" id="EMAIL-comf" class="qinputfield" placeholder="example@gmail.com">
+
+                <div class="buttonholder">
+                    <input type="button" id="cmf-b1" class="qbutton" onclick="Cancel();" value="Отмена">
+                    <input type="button" id="cmf-b2" class="qbutton"  onclick="Done();" value="Готово">
+                </div>
+            </div>
+        </div>
+
+        <script src="js/qscript.js"></script>
+        <script src="js/mainpagescript.js"></script>
+    </body>
+</html>
