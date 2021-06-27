@@ -1,0 +1,139 @@
+.popup {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:6;
+    visibility: hidden;
+    width:100%;
+    height:100vh;
+    background:#000000b9;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-window {
+    position:absolute;
+    background:white;
+    box-shadow:0px 0px 5px 0px black;
+    border-radius: 20px;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding:10px 10px;
+    max-height:90%;
+    max-width:100%;
+    box-sizing: border-box;
+}
+
+.registration {
+    width:620px;
+    max-width:100%;
+    padding:10px 20px;
+}
+.registration .qtext {
+    margin-top:5px;
+    text-align:center;
+}
+.registration h1 {
+    margin-top:0;
+}
+.registration h3 {
+    font-weight: bold;
+    font-size:23px;
+}
+.registration .qinputfield {
+    margin-top:3px;
+    max-width:95%;
+    width:320px;
+    text-align:center;
+}
+.registration .buttonholder {
+    margin-top:25px;
+    justify-content: center;
+    margin-bottom:6px;
+}
+.registration .qbutton {
+    width:220px;
+    font-size:22px;
+}
+.registration .qbutton:not(:first-child) {
+    margin-left:15px;
+}
+.form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comfort-inputs {
+    display: none;
+}
+.comfort-inputs .qheader {
+    margin-bottom:0;
+}
+
+.popup .qimage {
+    max-width:1000px;
+    max-height:700px;
+    min-width:525px;
+    min-height:525px;
+    margin:0;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+@media(max-width:1005px) and (min-width:601px){
+    .popup .qimage {
+        width:100%;
+        min-width:0;
+        min-height:0;
+    }
+    .popup-window {
+        width:93%;
+    }
+}
+
+@media(max-width:600px) {
+    .popup-window {
+        border-radius: 0px;
+        width:100%;
+    }
+    .registration {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .popup .qimage {
+        min-width:0;
+        min-height:0;
+        width:100%;
+    }
+}
+
+@keyframes popup-open {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes popup-close {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .popup-window {
+        background:#181818;
+    }
+}

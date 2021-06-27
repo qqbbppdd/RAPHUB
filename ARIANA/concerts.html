@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <title>ARIANA GRANDE | Концерты</title>
+    </head>
+    <body>
+        <header>
+            <div class="qmenu">
+                <a href="../index.html" class="qtextlogo">ARIANA</a>
+                <ul id="ul">
+                    <li><a href="index.html">Информация</a></li>
+                    <li><a href="music.html">Музыка</a></li>
+                    <li><a href="photos.html">Фото</a></li>
+                    <li><a href="concerts.html">Концерты</a></li>
+                </ul>
+                <input type="button" class="qmenubutton">
+            </div>
+        </header>
+        <main>
+            <div class="qcontent">
+                <h1 class="qheader" style="text-align:center">Концерты</h1>
+                <div class="concerts-holder">
+                </div>
+            </div>
+        </main>
+
+
+        <footer style="visibility: hidden;">
+            <img src="logo.png" width="130" height="130">
+        </footer>
+
+        <script>
+            let concerts = [
+                {"name":"Мировой Тур","path":"concerts/worldtour.jpg","link":"https://www.youtube.com/watch?v=rMNkiNTA4WQ&t=2602s"},
+                {"name":"Bang Bang","path":"concerts/bangbang.jpg","link":"https://www.youtube.com/watch?v=tVTeIhDw7Ok"},
+                {"name":"Into You","path":"concerts/intoyou.jpg","link":"https://www.youtube.com/watch?v=-YB4vETBdKo"},
+                {"name":"Problem","path":"concerts/problem.jpg","link":"https://www.youtube.com/watch?v=WAysag2VohM"},
+                {"name":"Side To Side","path":"concerts/sidetoside.jpg","link":"https://www.youtube.com/watch?v=A42N4IygFcg"},
+                {"name":"7 Rings","path":"concerts/7rings.jpg","link":"https://www.youtube.com/watch?v=FflfOb4BWCU"},
+                {"name":"Break Free","path":"concerts/breakfree.jpg","link":"https://www.youtube.com/watch?v=qiYN9GU5VPE&list=PLtKqZudGw0nKXpijvA-6UbrfzFScCAt8b&index=4"},
+                {"name":"Dangerous Woman","path":"concerts/dangerouswoman.jpg","link":"https://www.youtube.com/watch?v=1iosDmTIG6o"},
+                {"name":"Thank u, next","path":"concerts/thankunext.jpg","link":"https://www.youtube.com/watch?v=tX_vx_s6Gr0"}
+            ];
+        </script>
+        <script src="../js/concerts.js"></script>
+        <script src="../js/qscript.js"></script>
+    </body>
+</html>
