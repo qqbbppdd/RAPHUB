@@ -38,6 +38,7 @@ class FitObject {
         this.Element.style.minHeight = Math.ceil(height * 0.75) + "px";
         this.InitialSize = {"width":width,"height":height};
         setTimeout(() => function(obj){obj.Element.style.animation = "appear .4s ease-in-out forwards"}(this),this.Id*30);
+        this.Update();
     }
 
     Update() {
@@ -132,7 +133,6 @@ function ImgResizing() {
 }
 
 window.addEventListener("resize",ImgResizing);
-ImgResizing();
 
 document.addEventListener("visibilitychange", function() {
     if(!document.hidden) ImgResizing();
