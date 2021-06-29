@@ -64,9 +64,6 @@ mbutton.addEventListener("click",function(ev) {
     }
 });
 
+
+window.addEventListener("resize",Update);
 Update(true);
-window.onresize = Update;
-
-
-
-
