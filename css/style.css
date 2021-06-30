@@ -318,6 +318,7 @@ audio {
 }
 
 .tracks {
+    position: relative;
     margin-top:15px;
     display:grid;
     grid-template-columns: repeat(auto-fill,minmax(435px,1fr)); 
@@ -329,6 +330,24 @@ audio {
     justify-content: center;
 }
 
+.tracks.loading::before {
+    content:"";
+    position:absolute;
+    background-image:url("../img/loading.png");
+    background-size:100% 100%;
+    top:20px;
+    width:45px;
+    height:45px;
+    justify-self: center;
+    animation:loading .8s infinite linear;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .trackholder {
     max-width:600px;
     width:100%;
@@ -338,6 +357,8 @@ audio {
     align-items:center;
     justify-self: center;
     height:193px;
+    visibility: hidden;
+    opacity: 0;
 }
 
 /*Когда ширина экрана маленькая, трэкхолдер
