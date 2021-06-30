@@ -1,14 +1,45 @@
 const holder = document.querySelector(".qimagecontainer");
+const queue = [];
+let progress = 0;
 
-for(var a = 1; a <= count;a+=1) {
-    holder.innerHTML += '<img id="' + a +'" width="400" onclick="OpenImg(this)" style="max-width:100%" class="qimage tile" src="photos/' + root + a + '.jpg">';
+holder.classList.add("loading");
+
+for(var a = 1; a <= count;a+=1)
+    holder.innerHTML += '<img width="400" onclick="OpenImg(this)" style="max-width:100%" class="qimage tile" src="photos/' + root + a + '.jpg">';
+
+function Activate(id) {
+    setTimeout(function() {
+        if(id == 0) holder.classList.remove("loading");
+        holder.children[id].style.visibility = "visible";
+        holder.children[id].style.animation = "appear .4s forwards ease-in-out";
+        if(id == holder.children.length - 1) document.querySelector("footer").style.visibility = "visible";
+    },30*id);
 }
 
-//Когда последнее фото прогрузилось,
-//Подвал сайта становится видимым.
-document.getElementById(count).onload = function() {
-    document.querySelector("footer").style.visibility = "visible";
-};
+function Queue() {
+    if(queue.length == 0) return;
+    var index = queue.indexOf(progress);
+    if(index == -1) return;
+    queue.splice(index,1);
+    Activate(progress);
+    progress+=1;
+    Queue();
+}
+
+function Configure(id) {
+    holder.children[id].onload = function() {
+        if(progress == id) {
+            Activate(id);   
+            progress+=1;
+            Queue();
+            return;
+        }
+        queue.push(id);
+    };
+}
+
+for(var a = 0; a < holder.children.length;a+=1)
+    Configure(a);
 
 
 function pic(id) {

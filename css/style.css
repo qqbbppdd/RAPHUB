@@ -212,6 +212,15 @@ ol {
     margin:0;
 }
 
+.qimagecontainer.photos {
+    position: relative; 
+}
+
+.qimagecontainer.photos .qimage {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 .qundertext {
     font:italic 21px monospace;
@@ -330,7 +339,7 @@ audio {
     justify-content: center;
 }
 
-.tracks.loading::before {
+.loading::before {
     content:"";
     position:absolute;
     background-image:url("../img/loading.png");
@@ -349,16 +358,16 @@ audio {
 }
 
 .trackholder {
+    visibility: hidden;
+    display:flex;
+    opacity: 0;
     max-width:600px;
     width:100%;
     overflow:hidden;
-    display:flex;
     flex-direction: column;
     align-items:center;
     justify-self: center;
     height:193px;
-    visibility: hidden;
-    opacity: 0;
 }
 
 /*Когда ширина экрана маленькая, трэкхолдер
@@ -421,6 +430,7 @@ audio {
 }
 
 .concerts-holder {
+    position:relative;
     margin-top:20px;
     width:100%;
     display:flex;
@@ -434,6 +444,8 @@ audio {
     width:325px;
     height:325px;
     max-width: 100%;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .concerts-holder a {
