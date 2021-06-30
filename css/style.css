@@ -5,9 +5,6 @@ body {
     transition:background .4s;
 }
 
-resolution {
-    display: none;
-}
 
 ::selection {
     background:#858585;
@@ -19,6 +16,7 @@ body::-webkit-scrollbar {
     background:#e6e6e6;
     box-sizing: border-box;
     padding:0px 1px;
+    position:absolute;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -26,6 +24,7 @@ body::-webkit-scrollbar-thumb {
     border-radius:10px;
     border: 2px solid transparent;
     background-clip: content-box;
+    opacity: 0;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -181,7 +180,7 @@ ol {
 
 .article .qimage {
     opacity:0;
-    width:600px;
+    width:100px;
     height:400px;
 }
 
@@ -369,6 +368,7 @@ audio {
     justify-self: center;
     height:193px;
 }
+
 
 /*Когда ширина экрана маленькая, трэкхолдер
 определяет максимальную ширину не по пикселям,

@@ -10,9 +10,9 @@ for(var a = 1; a <= count;a+=1)
 function Activate(id) {
     setTimeout(function() {
         if(id == 0) holder.classList.remove("loading");
+        else if(id == holder.children.length - 1) document.querySelector("footer").style.visibility = "visible";
         holder.children[id].style.visibility = "visible";
         holder.children[id].style.animation = "appear .4s forwards ease-in-out";
-        if(id == holder.children.length - 1) document.querySelector("footer").style.visibility = "visible";
     },30*id);
 }
 
