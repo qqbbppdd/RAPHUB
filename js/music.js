@@ -1,51 +1,59 @@
 const holder = document.querySelector(".tracks");
 const queue = [];
-let progress = -1;
-
-//<audio controls><source src="' +music[a].path +'" type="audio/mpeg"></audio>
+let progress = 0;
 
 holder.classList.add("loading");
 
 for(var a = 0; a < music.length;a+=1) 
-    holder.innerHTML += '<div class="qblock trackholder"><h1>' +music[a].name +'</h1><div class="buttonholder"><a class="qbutton to-clip" target="_blank" href="' + music[a].video+'">Клип</a><a class="qbutton download" href="' +music[a].path +'" download>Скачать</a></div></div>';
+    holder.innerHTML += '<div class="qblock trackholder"><h1>' +music[a].name +'</h1><audio controls><source src="' +music[a].path +'" type="audio/mpeg"></audio><div class="buttonholder"><a class="qbutton to-clip" target="_blank" href="' + music[a].video+'">Клип</a><a class="qbutton download" href="' +music[a].path +'" download>Скачать</a></div></div>';
 
-function LastAudio() {
-    var audios = document.querySelectorAll("audio");
-    return audios[audios.length - 1];
-}
+let audios = document.querySelectorAll("audio");
 
-function Activate() {
-    var target = LastAudio();
-    if(progress == 0) holder.classList.remove("loading");
-    else if(progress == music.length - 1) document.querySelector("footer").style.visibility = "visible";
+function Activate(id) {
     setTimeout(function() {
-        target.parentElement.style.visibility = "visible";
-        target.parentElement.style.animation = "appear .4s forwards ease-in-out";
-    },30*progress);
+        if(id == 0) holder.classList.remove("loading");
+        audios[id].parentElement.style.visibility = "visible";
+        audios[id].parentElement.style.animation = "appear .4s forwards ease-in-out";
+
+        //Когда последний плеер загружен,
+        //Подвал сайта становится видимым.
+        if(id == audios.length - 1)
+            document.querySelector("footer").style.visibility = "visible";
+    },30*id);
 }
 
-function OnLoad() {
-    Activate();
-    Next();
+function Queue() {
+    if(queue.length == 0) return;
+    var index = queue.indexOf(progress);
+    if(index == -1) return;
+    queue.splice(index,1);
+    Activate(progress);
+    progress+=1;
+    Queue();
 }
 
-function Next() {
-    progress++;
-    if(progress == music.length) return;
-    var newAudio = document.createElement("audio");
-    newAudio.innerHTML = '<source src="' +music[progress].path +'" type="audio/mpeg">';
-    newAudio.controls = true;
-    newAudio.oncanplay = OnLoad;
-    newAudio.onplay = ShutOthers;
-    holder.children[progress].insertBefore(newAudio,holder.children[progress].children[1]);
+function Configure(id) {
+    audios[id].oncanplay = function() {
+        if(progress == id) {
+            Activate(id);
+            progress+=1;
+            Queue();
+            return;
+        }
+        queue.push(id);
+    };
 }
 
-Next();
+for(var a = 0; a < audios.length;a+=1)
+    Configure(a);
 
-function ShutOthers() {
-    const players = document.querySelectorAll("audio");
-    for(var b = 0; b < players.length;b+=1) {
-        if(players[b] == this) continue;
-        players[b].pause();
-    }
+const players = document.querySelectorAll("audio");
+
+for(var a = 0; a < players.length;a+=1) {
+    players[a].onplay = function() {
+        for(var b = 0; b < players.length;b+=1) {
+            if(players[b] == this) continue;
+            players[b].pause();
+        }
+    };
 }
