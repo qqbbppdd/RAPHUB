@@ -259,9 +259,10 @@ ol {
 
 .qplayer {
     margin:0;
-    width:600px;
-    height:380px;
     border:none;
+    max-width: 100%;
+    height: 380px;
+    width: 600px;
 }
 
 .qvideoplayer input {
@@ -291,12 +292,8 @@ ol {
     .qvideoplayer {
         margin-top:25px;
         margin-bottom:10px;
-        justify-content:space-between;
-        gap:25px;
-    }
-
-    .qplayer {
-        width:100%;
+        column-gap:6%;
+        row-gap: 15px;
     }
 
     .qvideoplayer input {
@@ -304,7 +301,7 @@ ol {
         width:47%;
         height:64px;
         background-size:36px 90%;
-
+        max-width:282px;
     }
 
     .less {
@@ -312,6 +309,18 @@ ol {
     }
     .more {
         order:1;
+    }
+}
+
+@media(max-width:420px) {
+    .qplayer {
+        height:320px;
+    }
+}
+
+@media(max-width:350px) {
+    .qplayer {
+        height:300px;
     }
 }
 
