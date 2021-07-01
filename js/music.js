@@ -1,6 +1,7 @@
 const holder = document.querySelector(".tracks");
 const queue = [];
 let progress = -1;
+let lastLoadedTime;
 
 //<audio controls><source src="' +music[a].path +'" type="audio/mpeg"></audio>
 
@@ -18,10 +19,18 @@ function Activate() {
     var target = LastAudio();
     if(progress == 0) holder.classList.remove("loading");
     else if(progress == music.length - 1) document.querySelector("footer").style.visibility = "visible";
+
+    var timeDiff = !lastLoadedTime? 0 : Date.now() - lastLoadedTime;
+    var delay = 30*progress - timeDiff;
+
+    console.log(delay);
+
     setTimeout(function() {
         target.parentElement.style.visibility = "visible";
         target.parentElement.style.animation = "appear .4s forwards ease-in-out";
-    },30*progress);
+    },(delay < 0? 0 : delay));
+
+    lastLoadedTime = Date.now();
 }
 
 function OnLoad() {
