@@ -23,12 +23,11 @@ function Activate() {
     var timeDiff = !lastLoadedTime? 0 : Date.now() - lastLoadedTime;
     var delay = 30*progress - timeDiff;
 
-    console.log(delay);
-
+    //(delay < 0? 0 : delay)
     setTimeout(function() {
         target.parentElement.style.visibility = "visible";
         target.parentElement.style.animation = "appear .4s forwards ease-in-out";
-    },(delay < 0? 0 : delay));
+    },30*progress);
 
     lastLoadedTime = Date.now();
 }
